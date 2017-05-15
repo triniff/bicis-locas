@@ -45,7 +45,7 @@ function validateForm(){
         return nuevoSpan;
 	}
 	//Validando Contraseña
-	if(contrasena == "" || contrasena.length == 0 || /^\s+$/.test(contrasena)){
+	if(contrasena == "" || contrasena.length == 0 || /^\s+$/.test(contrasena) || contrasena.length < 6 || contrasena == 123456 || contrasena == 098754){
         var hijo = document.getElementById("input-password");	//* llamando al elemento que le llamere el padre
         var padre = hijo.parentNode;	//* llamo al padre de el elemento que le pondre span
         padre.appendChild(nuevoSpan); //* le digo que inserte el span al padre

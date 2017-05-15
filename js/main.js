@@ -8,14 +8,14 @@ function validateForm(){
 
 	//Validando primera en mayuscula texto
 	function priMayuscula (string){
-		return string.charAt(0).toUpperCase()
+		return string.charAt(0).toUpperCase();
 	}
 
 	//Validando campos 
      var nuevoSpan = document.createElement("span"); 	//* Creando span
 
 	//Validando nombre
-	if(nombre == "" || nombre.length == 0 || nombre.charAt(0) != priMayuscula(nombre) || /^\s+$/.test(nombre)){
+	if(nombre == "" || nombre.length == 0 || nombre.charAt(0) != priMayuscula(nombre) || isNaN(nombre) == false || /^\s+$/.test(nombre)){
         var hijo = document.getElementById("name");	//* llamando al elemento que le llamere el padre
         var padre = hijo.parentNode;	//* llamo al padre de el elemento que le pondre span
         padre.appendChild(nuevoSpan); //* le digo que inserte el span al padre
@@ -25,7 +25,7 @@ function validateForm(){
         return nuevoSpan;
 	}
 	//Validando apellido
-	if(apellido == "" || apellido.length == 0 || apellido.charAt(0) != priMayuscula(apellido) || /^\s+$/.test(apellido)){
+	if(apellido == "" || apellido.length == 0 || apellido.charAt(0) != priMayuscula(apellido) || /^\s+$/.test(apellido) || isNaN(apellido) == false){
         var hijo = document.getElementById("lastname");	//* llamando al elemento que le llamere el padre
         var padre = hijo.parentNode;	//* llamo al padre de el elemento que le pondre span
         padre.appendChild(nuevoSpan); //* le digo que inserte el span al padre
@@ -35,7 +35,7 @@ function validateForm(){
         return nuevoSpan;
 	}
 	//Validando Correo
-	if(correo == "" || correo.length == 0 || /^\s+$/.test(correo)){
+	if(correo == "" || correo.length == 0 || /^\s+$/.test(correo) || /\S+@\S+\.\S+/.test(correo) == false){
         var hijo = document.getElementById("input-email");	//* llamando al elemento que le llamere el padre
         var padre = hijo.parentNode;	//* llamo al padre de el elemento que le pondre span
         padre.appendChild(nuevoSpan); //* le digo que inserte el span al padre

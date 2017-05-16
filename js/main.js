@@ -25,7 +25,7 @@ function validateForm(){
         return nuevoSpan;
 	}
 	//Validando apellido
-	if(apellido == "" || apellido.length == 0 || apellido.charAt(0) != priMayuscula(apellido) || /^\s+$/.test(apellido) || isNaN(apellido) == false || /^[a-zA-Z]*$/.test(nombre) == false){
+	if(apellido == "" || apellido.length == 0 || apellido.charAt(0) != priMayuscula(apellido) || /^\s+$/.test(apellido) || isNaN(apellido) == false || /^[a-zA-Z]*$/.test(apellido) == false){
         var hijo = document.getElementById("lastname");	//* llamando al elemento que le llamere el padre
         var padre = hijo.parentNode;	//* llamo al padre de el elemento que le pondre span
         padre.appendChild(nuevoSpan); //* le digo que inserte el span al padre
